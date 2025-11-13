@@ -1,5 +1,6 @@
 package com.example.san.styles
 
+import com.example.san.models.Portfolio
 import com.example.san.models.Theme
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.css.Visibility
@@ -10,6 +11,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.translateX
 import com.varabyte.kobweb.compose.ui.modifiers.visibility
 import com.varabyte.kobweb.compose.ui.modifiers.width
 import com.varabyte.kobweb.silk.style.CssStyle
+import com.varabyte.kobweb.silk.style.selectors.hover
 import org.jetbrains.compose.web.css.ms
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
@@ -52,12 +54,21 @@ val PortfolioSectionStyle = CssStyle {
     cssRule(" > #columnParent > #portfolioDesc") {
         Modifier
             .translateX(0.percent)
-            .transition(
-                Transition.of(property = "translate", duration = 200.ms)
-            )
+            .transition(Transition.of(property = "translate", duration = 200.ms))
     }
 
     cssRule(":hover > #columnParent > #portfolioDesc") {
         Modifier.translateX(5.percent)
+    }
+}
+
+val PortfolioArrowIconStyle = CssStyle {
+    base {
+        Modifier
+            .color(Theme.Gray.rgb)
+            .transition(Transition.of(property = "color", duration = 200.ms))
+    }
+    hover {
+        Modifier.color(Theme.Primary.rgb)
     }
 }
