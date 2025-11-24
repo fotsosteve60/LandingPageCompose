@@ -100,7 +100,7 @@ fun RightSide() {
                     .textDecorationLine(TextDecorationLine.None)
                     .color(Theme.Secondary.rgb),
                 path = section.path,
-                text = section.title
+                text = section.title,
             )
         }
     }
