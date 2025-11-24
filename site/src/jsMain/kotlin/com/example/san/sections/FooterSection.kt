@@ -17,6 +17,7 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.backgroundColor
+import com.varabyte.kobweb.compose.ui.modifiers.color
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.fontFamily
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize
@@ -96,7 +97,8 @@ fun FooterMenu(row: Boolean = true) {
                 )
                 .fontSize(12.px)
                 .fontWeight(FontWeight.Normal)
-                .textDecorationLine(TextDecorationLine.None),
+                .textDecorationLine(TextDecorationLine.None)
+                .color(Theme.Secondary.rgb),
             path = section.path,
             text = section.title
         )
