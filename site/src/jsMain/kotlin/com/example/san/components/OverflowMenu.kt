@@ -8,6 +8,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import com.example.san.models.Section
+import com.example.san.models.Theme
 import com.example.san.styles.NavigationItemStyle
 import com.example.san.util.Constants.FONT_FAMILY
 import com.example.san.util.Res
@@ -56,6 +57,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.web.css.Position
 import com.varabyte.kobweb.compose.css.Transition
+import com.varabyte.kobweb.compose.ui.modifiers.color
 import org.jetbrains.compose.web.css.ms
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
@@ -135,6 +137,7 @@ fun OverflowMenu(onMenuClosed: () -> Unit) {
                         .fontSize(16.px)
                         .fontWeight(FontWeight.Normal)
                         .textDecorationLine(TextDecorationLine.None)
+                        .color(Theme.Secondary.rgb)
                         .onClick {
                             scope.launch {
                                 translateX = (-100).percent
